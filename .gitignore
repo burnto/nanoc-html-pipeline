@@ -1,0 +1,4 @@
+.rbenv-version
+.DS_Store
+.rvmrc
+*.gem
