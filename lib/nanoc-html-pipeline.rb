@@ -5,6 +5,8 @@ require 'html/pipeline'
 
 class NanocHtmlPipeline < Nanoc::Filter
 
+  VERSION = '0.1.0'
+
   def self.filter_key(s) 
     s.to_s.downcase.to_sym
   end

@@ -1,10 +1,10 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "nanoc-html-pipeline/version"
+require "nanoc-html-pipeline"
 
 Gem::Specification.new do |s|
   s.name        = "nanoc-html-pipeline"
-  s.version     = NanocHTMLPipeline::VERSION
+  s.version     = NanocHtmlPipeline::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Brent Fitzgerlad"]
   s.email       = ["b@brentfitzgerald.com"]
