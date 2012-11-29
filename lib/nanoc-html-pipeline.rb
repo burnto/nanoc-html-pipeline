@@ -1,11 +1,7 @@
 # encoding: utf-8
 
-# Load requirements
 require 'nanoc3'
 require 'html/pipeline'
-
-
-# puts pipeline_filters.map{|x| [x[0], x[1]] }
 
 class NanocHtmlPipeline < Nanoc::Filter
 
@@ -30,7 +26,6 @@ class NanocHtmlPipeline < Nanoc::Filter
     rescue LoadError
       h
     end
-    # puts klass
   end
 
   # Runs the content through [HTML::Pipline](https://github.com/jch/html-pipeline).
