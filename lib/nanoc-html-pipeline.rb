@@ -54,4 +54,4 @@ class NanocHtmlPipeline < Nanoc::Filter
 
 end
 
-Nanoc::Filter.register '::NanocHTMLPipeline', :html_pipeline
+Nanoc::Filter.register 'NanocHtmlPipeline', :html_pipeline
