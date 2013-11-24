@@ -41,18 +41,12 @@ class NanocHtmlPipelineTest < Test::Unit::TestCase
     filters = [
       HTML::Pipeline::MarkdownFilter,
       HTML::Pipeline::SanitizationFilter,
-      HTML::Pipeline::CamoFilter,
       HTML::Pipeline::ImageMaxWidthFilter,
       HTML::Pipeline::HttpsFilter,
-      HTML::Pipeline::MentionFilter,
-      HTML::Pipeline::EmojiFilter,
-      HTML::Pipeline::SyntaxHighlightFilter
+      HTML::Pipeline::MentionFilter
     ]
     pipeline = HTML::Pipeline.new(filters, CONTEXT.merge(:gfm => true))
     assert_equal pipeline.to_html(input),
       NanocHtmlPipeline.new.run(input, :pipeline => filters)
   end
-
-
-
 end

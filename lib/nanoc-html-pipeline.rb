@@ -7,7 +7,7 @@ class NanocHtmlPipeline < Nanoc::Filter
 
   VERSION = '0.1.0'
 
-  def self.filter_key(s) 
+  def self.filter_key(s)
     s.to_s.downcase.to_sym
   end
 
@@ -15,19 +15,6 @@ class NanocHtmlPipeline < Nanoc::Filter
     f < HTML::Pipeline::Filter
   rescue LoadError, ArgumentError
     false
-  end
-
-  FILTERS = HTML::Pipeline.constants.reduce({}) do |h, symbol|
-    begin
-      f = HTML::Pipeline.const_get(symbol)
-      if self.is_filter(f)
-        h.merge(self.filter_key(symbol) => f)
-      else 
-        h
-      end
-    rescue LoadError
-      h
-    end
   end
 
   # Runs the content through [HTML::Pipline](https://github.com/jch/html-pipeline).
@@ -45,7 +32,8 @@ class NanocHtmlPipeline < Nanoc::Filter
         f
       else
         key = self.class.filter_key(f)
-        FILTERS[key]
+        filter = HTML::Pipeline.constants.find { |c| c.downcase == key }
+        HTML::Pipeline.const_get(filter)
       end
     end
 
