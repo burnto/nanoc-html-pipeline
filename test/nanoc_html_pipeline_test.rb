@@ -14,25 +14,25 @@ class NanocHtmlPipelineTest < Test::Unit::TestCase
   def test_single_filter
     input = "<p>a link is #{URL}</p>"
     assert_equal HTML::Pipeline::AutolinkFilter.to_html(input),
-      NanocHtmlPipeline.new.run(input, :pipeline => [:autolinkfilter])
+      NanocHtmlPipeline::Filter.new.run(input, :pipeline => [:autolinkfilter])
   end
 
   def test_filter_class
     input = "<p>a link is #{URL}</p>"
-    assert_equal NanocHtmlPipeline.new.run(input, :pipeline => [HTML::Pipeline::AutolinkFilter]),
-      NanocHtmlPipeline.new.run(input, :pipeline => [:autolinkfilter])
+    assert_equal NanocHtmlPipeline::Filter.new.run(input, :pipeline => [HTML::Pipeline::AutolinkFilter]),
+      NanocHtmlPipeline::Filter.new.run(input, :pipeline => [:autolinkfilter])
   end
 
   def test_params
     asset_root = "https://a248.e.akamai.net/assets.github.com/images/icons/"
     expected = "<p>an emoji <img class=\"emoji\" title=\":smile:\" alt=\":smile:\" src=\"#{asset_root}emoji/smile.png\" height=\"20\" width=\"20\" align=\"absmiddle\"></p>"
     assert_equal expected,
-      NanocHtmlPipeline.new.run("<p>an emoji :smile:</p>", :pipeline => [:emojifilter], :asset_root => asset_root)
+      NanocHtmlPipeline::Filter.new.run("<p>an emoji :smile:</p>", :pipeline => [:emojifilter], :asset_root => asset_root)
   end
 
   def test_multiple_filters
     assert_equal "<p>a link is <a href=\"#{URL}\">#{URL}</a></p>",
-      NanocHtmlPipeline.new.run("a link is #{URL}", :pipeline => [:markdownfilter, :autolinkfilter])
+      NanocHtmlPipeline::Filter.new.run("a link is #{URL}", :pipeline => [:markdownfilter, :autolinkfilter])
   end
 
   def test_pipeline
@@ -47,6 +47,6 @@ class NanocHtmlPipelineTest < Test::Unit::TestCase
     ]
     pipeline = HTML::Pipeline.new(filters, CONTEXT.merge(:gfm => true))
     assert_equal pipeline.to_html(input),
-      NanocHtmlPipeline.new.run(input, :pipeline => filters)
+      NanocHtmlPipeline::Filter.new.run(input, :pipeline => filters)
   end
 end

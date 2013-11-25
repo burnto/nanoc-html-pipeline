@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    nanoc-html-pipeline (0.1.0)
+    nanoc-html-pipeline (0.2.0)
       html-pipeline (>= 1.0.0)
       nanoc (>= 3.1.6)
 
@@ -20,14 +20,14 @@ GEM
       colored (>= 1.2)
     gemoji (1.5.0)
     github-markdown (0.6.3)
-    html-pipeline (1.0.0)
+    html-pipeline (1.1.0)
       activesupport (>= 2)
       nokogiri (~> 1.4)
     i18n (0.6.5)
     mini_portile (0.5.2)
     minitest (4.7.5)
     multi_json (1.8.2)
-    nanoc (3.6.5)
+    nanoc (3.6.6)
       cri (~> 2.3)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)

@@ -1,6 +1,10 @@
 # -*- encoding: utf-8 -*-
-$:.push File.expand_path("../lib", __FILE__)
-require "nanoc-html-pipeline"
+# $:.push File.expand_path("../lib", __FILE__)
+
+lib = File.expand_path('../lib/', __FILE__)
+$:.unshift lib unless $:.include?(lib)
+
+require "nanoc-html-pipeline/version"
 
 Gem::Specification.new do |s|
   s.name        = "nanoc-html-pipeline"
@@ -8,7 +12,6 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Brent Fitzgerlad"]
   s.email       = ["b@brentfitzgerald.com"]
-  # s.homepage    = "http://brentfitzgerald.com/"
   s.summary     = "nanoc filter for html-pipeline"
   s.description = ""
 
