@@ -54,7 +54,7 @@ class NanocHtmlPipelineTest < Test::Unit::TestCase
     input = "\n {{#tip}}\n **Tip**: Wow! \n {{/tip}}"
 
     filters = [
-      HTML::Pipeline::AddedMarkdownFilter,
+      NanocHtmlPipelineTestFilter::AddedMarkdownFilter,
       HTML::Pipeline::MarkdownFilter
     ]
     pipeline = HTML::Pipeline.new(filters)

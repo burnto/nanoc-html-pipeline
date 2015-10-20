@@ -1,15 +1,17 @@
 require 'html/pipeline'
 
-class AddedMarkdownFilter < HTML::Pipeline::MarkdownFilter
+module NanocHtmlPipelineTestFilter
+  class AddedMarkdownFilter < HTML::Pipeline::MarkdownFilter
 
-  def call
-    html = super
+    def call
+      html = super
 
-    format_callout!(html)
-  end
+      format_callout!(html)
+    end
 
-  def format_callout!(html)
-    html.gsub!(/(?:<p>)?{{#(tip|warning|error)}}(?:<\/p>)?/,  '<div class="alert \1">')
-    html.gsub!(/(?:<p>)?{{\/(tip|warning|error)}}(?:<\/p>)?/, '</div>')
+    def format_callout!(html)
+      html.gsub!(/(?:<p>)?{{#(tip|warning|error)}}(?:<\/p>)?/,  '<div class="alert \1">')
+      html.gsub!(/(?:<p>)?{{\/(tip|warning|error)}}(?:<\/p>)?/, '</div>')
+    end
   end
 end
