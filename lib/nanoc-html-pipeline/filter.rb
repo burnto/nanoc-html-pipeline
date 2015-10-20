@@ -1,6 +1,8 @@
-# encoding: utf-8
-
-require 'nanoc3'
+begin
+  require 'nanoc3'
+rescue LoadError
+  require 'nanoc'
+end
 require 'html/pipeline'
 
 module NanocHtmlPipeline
