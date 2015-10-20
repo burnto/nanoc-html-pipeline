@@ -24,8 +24,9 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('nanoc', '>= 3.1.6')
   s.add_runtime_dependency('html-pipeline', '>= 1.0.0')
 
+  s.add_development_dependency('test-unit', '~> 3.1.5')
   s.add_development_dependency('rinku', '~> 1.7.3')
   s.add_development_dependency('github-markdown', '~> 0.6.3')
-  s.add_development_dependency('gemoji', '~> 1.5.0')
+  s.add_development_dependency('gemoji', '~> 2.0')
   s.add_development_dependency('sanitize', '~> 2.0.6')
 end
