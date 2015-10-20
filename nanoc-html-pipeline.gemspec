@@ -13,6 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "nanoc filter for html-pipeline"
   s.description = "An adapter for using html-pipeline as a filter in your nanoc Rules"
   s.homepage    = "https://github.com/burnto/nanoc-html-pipeline"
+  s.licenses    = ['MIT']
 
   s.rubyforge_project = "nanoc-html-pipeline"
 
