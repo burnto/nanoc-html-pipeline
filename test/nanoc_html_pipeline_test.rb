@@ -49,7 +49,7 @@ class NanocHtmlPipelineTest < Test::Unit::TestCase
       NanocHtmlPipeline::Filter.new.run(input, :pipeline => filters)
   end
 
-  def test_work_for_custom_filters
+  def test_works_for_custom_filters
     require 'support/new_pipeline'
     input = "\n {{#tip}}\n **Tip**: Wow! \n {{/tip}}"
 
