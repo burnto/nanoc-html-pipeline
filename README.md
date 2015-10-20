@@ -30,7 +30,7 @@ Usage
 In your nanoc Rules file, use an `:html_pipeline` filter to run content through a pipeline.
 
 ```ruby
-filter :html_pipeline, 
-  :pipeline => [:mardownfilter, :emojifilter, :syntaxhighlightfilter], 
+filter :html_pipeline,
+  :pipeline => [:markdownfilter, :emojifilter, :syntaxhighlightfilter],
   :asset_root => "http://your-domain.com/where/your/emoji/live"
 ```
