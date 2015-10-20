@@ -49,4 +49,17 @@ class NanocHtmlPipelineTest < Test::Unit::TestCase
     assert_equal pipeline.to_html(input),
       NanocHtmlPipeline::Filter.new.run(input, :pipeline => filters)
   end
+
+  def test_work_for_custom_filters
+    require 'support/new_pipeline'
+    input = "\n {{#tip}}\n **Tip**: Wow! \n {{/tip}}"
+
+    filters = [
+      HTML::Pipeline::AddedMarkdownFilter,
+      HTML::Pipeline::MarkdownFilter
+    ]
+    pipeline = HTML::Pipeline.new(filters)
+
+    assert_equal pipeline.to_html(input), "<div class=\"alert tip\"><br>\n <strong>Tip</strong>: Wow! <br>\n </div>"
+  end
 end
