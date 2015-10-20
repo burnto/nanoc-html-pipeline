@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "nanoc-html-pipeline"
   s.version     = NanocHtmlPipeline::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Brent Fitzgerlad"]
+  s.authors     = ["Brent Fitzgerlad", "Garen Torikian"]
   s.email       = ["b@brentfitzgerald.com"]
   s.summary     = "nanoc filter for html-pipeline"
   s.description = "An adapter for using html-pipeline as a filter in your nanoc Rules"
