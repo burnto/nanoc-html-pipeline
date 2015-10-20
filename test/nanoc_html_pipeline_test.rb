@@ -42,7 +42,6 @@ class NanocHtmlPipelineTest < Test::Unit::TestCase
       HTML::Pipeline::MarkdownFilter,
       HTML::Pipeline::SanitizationFilter,
       HTML::Pipeline::ImageMaxWidthFilter,
-      HTML::Pipeline::HttpsFilter,
       HTML::Pipeline::MentionFilter
     ]
     pipeline = HTML::Pipeline.new(filters, CONTEXT.merge(:gfm => true))
