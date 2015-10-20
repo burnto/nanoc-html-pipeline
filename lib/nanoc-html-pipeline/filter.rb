@@ -34,7 +34,12 @@ module NanocHtmlPipeline
         else
           key = self.class.filter_key(f)
           filter = HTML::Pipeline.constants.find { |c| c.downcase == key }
-          HTML::Pipeline.const_get(filter)
+          # possibly a custom filter
+          if filter.nil?
+            Nanoc.const_get(f)
+          else
+            HTML::Pipeline.const_get(filter)
+          end
         end
       end
 
