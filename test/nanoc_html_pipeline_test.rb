@@ -25,7 +25,7 @@ class NanocHtmlPipelineTest < Test::Unit::TestCase
 
   def test_params
     asset_root = "https://a248.e.akamai.net/assets.github.com/images/icons/"
-    expected = "<p>an emoji <img class=\"emoji\" title=\":smile:\" alt=\":smile:\" src=\"#{asset_root}emoji/smile.png\" height=\"20\" width=\"20\" align=\"absmiddle\"></p>"
+    expected = "<p>an emoji <img class=\"emoji\" title=\":smile:\" alt=\":smile:\" src=\"#{asset_root}emoji/unicode/1f604.png\" height=\"20\" width=\"20\" align=\"absmiddle\"></p>"
     assert_equal expected,
       NanocHtmlPipeline::Filter.new.run("<p>an emoji :smile:</p>", :pipeline => [:emojifilter], :asset_root => asset_root)
   end
