@@ -7,6 +7,7 @@ require 'html/pipeline'
 
 module NanocHtmlPipeline
   class Filter < Nanoc::Filter
+    identifier :html_pipeline
 
     def self.filter_key(s)
       s.to_s.downcase.to_sym
@@ -46,7 +47,4 @@ module NanocHtmlPipeline
       HTML::Pipeline.new(filters, options).to_html(content)
     end
   end
-
 end
-
-Nanoc::Filter.register 'NanocHtmlPipeline::Filter', :html_pipeline
