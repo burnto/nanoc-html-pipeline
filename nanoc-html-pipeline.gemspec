@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('html-pipeline', '~> 2.0')
 
   s.add_development_dependency('test-unit', '~> 3.1')
+  s.add_development_dependency('rake')
   s.add_development_dependency('rinku', '~> 1.7')
   s.add_development_dependency('github-markdown', '~> 0.6')
   s.add_development_dependency('gemoji', '~> 2.0')
